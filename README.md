@@ -1,41 +1,56 @@
-# Website
+# Chaos-Driven Development
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Site de documentação e blog que registra desafios e soluções de desenvolvimento. Construído com [Docusaurus 3](https://docusaurus.io/).
 
-## Installation
+🌐 **Site:** https://chaos-driven-development.vercel.app
+
+## Requisitos
+
+- Node.js >= 20.0
+
+## Instalação
 
 ```bash
-yarn
+npm install
 ```
 
-## Local Development
+## Desenvolvimento Local
 
 ```bash
-yarn start
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Inicia o servidor de desenvolvimento com hot reload. As alterações são refletidas automaticamente no navegador.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Gera o conteúdo estático no diretório `build/`.
 
-## Deployment
-
-Using SSH:
+## Servir Build Local
 
 ```bash
-USE_SSH=true yarn deploy
+npm run serve
 ```
 
-Not using SSH:
+Serve a build de produção localmente para testes.
+
+## Outros Comandos
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+# Verificação de tipos TypeScript
+npm run typecheck
+
+# Limpar cache
+npm run clear
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## Deploy
+
+O site é hospedado na Vercel e faz deploy automático a partir da branch principal.
+
+## Assets:
+https://pixelarticons.com/icon/braces-content/

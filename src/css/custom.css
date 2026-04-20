@@ -4,27 +4,362 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+@import url("https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+
+/* Paleta Pergaminho - Bestiário Medieval */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #7d3b2d;
+  --ifm-color-primary-dark: #6e3427;
+  --ifm-color-primary-darker: #672f24;
+  --ifm-color-primary-darkest: #55271d;
+  --ifm-color-primary-light: #8c4233;
+  --ifm-color-primary-lighter: #934536;
+  --ifm-color-primary-lightest: #a85442;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(125, 59, 45, 0.1);
+
+  --ifm-background-color: #ede1c9;
+  --ifm-navbar-background-color: #e5d7bc;
+  --ifm-footer-background-color: #342b22;
+
+  /* Cores secundárias */
+  --color-secondary-green: #4a6741;
+  --color-secondary-blue: #3d5a6e;
+  --color-secondary-purple: #5c4a6e;
+  --color-secondary-gold: #8b7335;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+/* Dark mode */
+[data-theme="dark"] {
+  --ifm-color-primary: #d0aa6c;
+  --ifm-color-primary-dark: #c79c55;
+  --ifm-color-primary-darker: #c3954a;
+  --ifm-color-primary-darkest: #a87a32;
+  --ifm-color-primary-light: #d9b883;
+  --ifm-color-primary-lighter: #ddbf8e;
+  --ifm-color-primary-lightest: #e9d4b0;
+  --docusaurus-highlighted-code-line-bg: rgba(208, 170, 108, 0.2);
+
+  --ifm-background-color: #342b22;
+  --ifm-navbar-background-color: #3d332a;
+  --ifm-footer-background-color: #231d17;
+
+  /* Cores secundárias */
+  --color-secondary-green: #7fa872;
+  --color-secondary-blue: #6a9ab8;
+  --color-secondary-purple: #9a82b0;
+  --color-secondary-gold: #c9b36a;
+}
+
+/* Fonte Jacquard 12 apenas no título da navbar e hero */
+.navbar__title {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--ifm-color-primary);
+}
+
+.hero__title {
+  font-family: "Jacquard 12", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 6rem;
+  line-height: 0.8;
+  color: var(--ifm-background-color);
+}
+
+/* Textura de bugs no hero banner */
+.hero--primary {
+  isolation: isolate;
+}
+
+.hero--primary::before {
+  content: "";
+  position: absolute;
+  inset: -100vw;
+  z-index: -1;
+  opacity: 0.2;
+  background-image: url("/img/icons/bug-tile.svg");
+  background-size: 80px 80px;
+  background-repeat: repeat;
+  filter: brightness(0) invert(1);
+  transform: rotate(-45deg);
+}
+
+.hero__subtitle {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* ========================================
+   ESTILOS GÓTICO-MEDIEVAIS
+   ======================================== */
+
+/* 1. Capitulares decoradas - primeira letra dos parágrafos em artigos */
+.drop-cap {
+  float: left;
+
+  display: inline-flex;
+  width: 1.1em;
+  height: 1.1em;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.25em;
+
+  font-family: "Jacquard 12", serif;
+  font-size: 4em;
+  line-height: 1;
+  color: var(--ifm-background-color);
+
+  background-color: var(--ifm-color-primary-darkest);
+  text-shadow:
+    -2px -2px 0 var(--ifm-color-primary),
+    2px -2px 0 var(--ifm-color-primary),
+    -2px 2px 0 var(--ifm-color-primary),
+    2px 2px 0 var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
+  box-shadow:
+    0 0 0 2px var(--ifm-background-color),
+    0 0 0 4px var(--ifm-color-primary);
+
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Textura de símbolos no fundo da capitular */
+.drop-cap::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  opacity: 0.25;
+  background-image: url("/img/icons/bug-tile.svg");
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  filter: brightness(0) invert(1);
+  transform: rotate(-45deg);
+}
+
+/* 3. Bordas ornamentais nos cards e containers */
+.card,
+article,
+.theme-doc-markdown {
+  border: 2px solid var(--ifm-color-primary-lightest);
+  border-image: linear-gradient(
+      135deg,
+      var(--ifm-color-primary) 0%,
+      var(--ifm-color-primary-lightest) 50%,
+      var(--ifm-color-primary) 100%
+    )
+    1;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Cantos decorativos com ícones pixelados */
+.card::before,
+article::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 1rem;
+  width: 24px;
+  height: 24px;
+  background-color: var(--ifm-background-color);
+  background-image: url("/img/icons/brackets-content-light.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card::after,
+article::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  right: 1rem;
+  width: 24px;
+  height: 24px;
+  background-color: var(--ifm-background-color);
+  background-image: url("/img/icons/brackets-content-light.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+[data-theme="dark"] .card::before,
+[data-theme="dark"] article::before {
+  background-image: url("/img/icons/brackets-content-dark.svg");
+}
+
+[data-theme="dark"] .card::after,
+[data-theme="dark"] article::after {
+  background-image: url("/img/icons/brackets-content-dark.svg");
+}
+
+/* 4. Separadores decorativos */
+hr,
+.markdown hr,
+.theme-doc-markdown hr,
+article hr {
+  border: none;
+  margin: 2rem auto;
+  height: 24px;
+  width: 180px;
+  background:
+    linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) 0 50% /
+      50px 2px no-repeat,
+    linear-gradient(var(--ifm-color-primary), var(--ifm-color-primary)) 100%
+      50% / 50px 2px no-repeat;
+  position: relative;
+}
+
+hr::before,
+.markdown hr::before,
+.theme-doc-markdown hr::before,
+article hr::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background-color: var(--ifm-color-primary);
+  mask-image: url("/img/icons/bug.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url("/img/icons/bug.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}
+
+/* ========================================
+   ÍCONES PIXELADOS DA NAVBAR
+   ======================================== */
+
+/* Botão de toggle do tema (sol/lua) */
+.navbar__items button[class*="toggle"] svg,
+button[class*="ColorModeToggle"] svg {
+  display: none;
+}
+
+.navbar__items button[class*="toggle"],
+button[class*="ColorModeToggle"] {
+  width: 32px;
+  height: 32px;
+  background-color: var(--ifm-color-primary);
+  mask-image: url("/img/icons/moon.svg");
+  mask-size: 24px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/img/icons/moon.svg");
+  -webkit-mask-size: 24px;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+[data-theme="dark"] .navbar__items button[class*="toggle"],
+[data-theme="dark"] button[class*="ColorModeToggle"] {
+  mask-image: url("/img/icons/sun.svg");
+  -webkit-mask-image: url("/img/icons/sun.svg");
+}
+
+/* Botão de menu mobile */
+.navbar__toggle svg {
+  display: none;
+}
+
+.navbar__toggle {
+  width: 32px;
+  height: 32px;
+  background-color: var(--ifm-color-primary);
+  mask-image: url("/img/icons/menu.svg");
+  mask-size: 24px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("/img/icons/menu.svg");
+  -webkit-mask-size: 24px;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+/* Botão de busca */
+.navbar__search-input::before,
+button[class*="searchButton"] svg {
+  display: none;
+}
+
+button[class*="searchButton"]::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-color: var(--ifm-color-primary);
+  mask-image: url("/img/icons/search.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url("/img/icons/search.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+}
+
+/* Link externo (GitHub) */
+.navbar__item[href*="github"] svg {
+  display: none;
+}
+
+.navbar__item[href*="github"]::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--ifm-color-primary);
+  mask-image: url("/img/icons/external-link.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url("/img/icons/external-link.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+}
+
+p.subtitle {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.circle-container {
+  display: flex;
+  width: 6em;
+  height: 6em;
+
+  padding: 1em;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  color: var(--ifm-background-color);
+  background-color: var(--ifm-color-primary);
+
+}
+
+/* Cores do tema no footer */
+.footer {
+  background-color: var(--ifm-color-primary-darkest);
+  color: var(--ifm-background-color);
 }
