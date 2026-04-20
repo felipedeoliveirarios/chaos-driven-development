@@ -52,5 +52,7 @@ npm run clear
 
 O site é hospedado na Vercel e faz deploy automático a partir da branch principal.
 
+> **Nota:** O link "Arsenal de Ferramentas" na homepage aponta temporariamente para `/blog/tags` (lista geral). Ao criar o primeiro post com `tags: [ferramentas]`, atualizar o link em `src/components/HomepageFeatures/index.tsx` para `/blog/tags/ferramentas`.
+
 ## Assets:
 https://pixelarticons.com/icon/braces-content/

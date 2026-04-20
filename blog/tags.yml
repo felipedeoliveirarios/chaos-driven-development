@@ -17,3 +17,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+ferramentas:
+  label: Ferramentas
+  permalink: /ferramentas
+  description: Ferramentas úteis de desenvolvimento e organização

@@ -43,7 +43,7 @@ const FeatureList: FeatureItem[] = [
         fluxo de trabalho.
       </>
     ),
-    link: '/blog/tags/ferramentas',
+    link: '/blog/tags',
   },
 ];
 
