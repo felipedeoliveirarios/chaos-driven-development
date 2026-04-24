@@ -35,8 +35,8 @@
   --ifm-heading-font-family: "Crimson Text", serif;
 
   /* Navbar e footer (cores invertidas) */
-  --ifm-navbar-background-color: #efdac7;
-  --ifm-footer-background-color: #efdac7;
+  --ifm-navbar-background-color: var(--color-accent);
+  --ifm-footer-background-color: var(--color-accent);
 
   /* Código */
   --ifm-code-font-size: 95%;
@@ -66,8 +66,8 @@
   --ifm-heading-color: var(--color-accent);
 
   /* Navbar e footer (cores invertidas) */
-  --ifm-navbar-background-color: #22211f;
-  --ifm-footer-background-color: #22211f;
+  --ifm-navbar-background-color: var(--color-accent);
+  --ifm-footer-background-color: var(--color-accent);
 
   /* Código */
   --docusaurus-highlighted-code-line-bg: rgba(34, 33, 31, 0.2);
@@ -210,11 +210,11 @@ button[class*="searchButton"]::before {
   image-rendering: crisp-edges;
   pointer-events: none;
   z-index: 1;
-  filter: brightness(0) saturate(100%) invert(89%) sepia(19%) saturate(254%) hue-rotate(344deg) brightness(98%) contrast(91%);
+  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%) hue-rotate(316deg) brightness(99%) contrast(78%);
 }
 
 [data-theme="dark"] .hero--primary::after {
-  filter: brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(702%) hue-rotate(2deg) brightness(97%) contrast(87%);
+  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%) hue-rotate(338deg) brightness(93%) contrast(82%);
 }
 
 .hero__title {
@@ -223,7 +223,7 @@ button[class*="searchButton"]::before {
   font-style: normal;
   font-size: 6rem;
   line-height: 0.8;
-  color: var(--ifm-font-color-base);
+  color: var(--color-accent);
 }
 
 .hero__subtitle {
@@ -272,8 +272,7 @@ p.subtitle {
    6. BORDAS ORNAMENTAIS (CARDS E ARTIGOS)
    ======================================== */
 
-.card,
-article {
+.card {
   border: 2px solid var(--ifm-color-primary-lightest);
   border-image: linear-gradient(
       135deg,
@@ -286,8 +285,33 @@ article {
   position: relative;
 }
 
-.card::before,
-article::before {
+article {
+  position: relative;
+  padding: 60px 60px 56px 60px;
+}
+
+article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: 60px solid transparent;
+  border-right-width: 56px;
+  border-bottom-width: 56px;
+  border-image: url("/img/border-image-decoration-3.png") 60 56 56 60 round;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  z-index: 1;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%) hue-rotate(316deg) brightness(99%) contrast(78%);
+}
+
+[data-theme="dark"] article::after {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%) hue-rotate(338deg) brightness(93%) contrast(82%);
+}
+
+.card::before {
   content: "";
   position: absolute;
   top: -12px;
@@ -301,8 +325,7 @@ article::before {
   background-position: center;
 }
 
-.card::after,
-article::after {
+.card::after {
   content: "";
   position: absolute;
   bottom: -12px;
@@ -316,13 +339,11 @@ article::after {
   background-position: center;
 }
 
-[data-theme="dark"] .card::before,
-[data-theme="dark"] article::before {
+[data-theme="dark"] .card::before {
   background-image: url("/img/icons/brackets-content-dark.svg");
 }
 
-[data-theme="dark"] .card::after,
-[data-theme="dark"] article::after {
+[data-theme="dark"] .card::after {
   background-image: url("/img/icons/brackets-content-dark.svg");
 }
 
@@ -336,13 +357,9 @@ hr,
 article hr {
   border: none;
   margin: 2rem auto;
-  height: 24px;
+  height: 36px;
   width: 180px;
-  background:
-    linear-gradient(var(--color-accent), var(--color-accent)) 0 50% /
-      50px 2px no-repeat,
-    linear-gradient(var(--color-accent), var(--color-accent)) 100%
-      50% / 50px 2px no-repeat;
+  background: none;
   position: relative;
 }
 
@@ -355,8 +372,8 @@ article hr::before {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   background-color: var(--color-accent);
   mask-image: url("/img/icons/bug.svg");
   mask-size: contain;
@@ -364,6 +381,33 @@ article hr::before {
   -webkit-mask-image: url("/img/icons/bug.svg");
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
+}
+
+hr::after,
+.markdown hr::after,
+.theme-doc-markdown hr::after,
+article hr::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  mask-image: linear-gradient(
+    to right,
+    black 0, black calc(50% - 22px),
+    transparent calc(50% - 22px), transparent calc(50% + 22px),
+    black calc(50% + 22px), black 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0, black calc(50% - 22px),
+    transparent calc(50% - 22px), transparent calc(50% + 22px),
+    black calc(50% + 22px), black 100%
+  );
 }
 
 /* ========================================
@@ -407,11 +451,11 @@ article hr::before {
   image-rendering: crisp-edges;
   pointer-events: none;
   z-index: 1;
-  filter: brightness(0) saturate(100%) invert(89%) sepia(19%) saturate(254%) hue-rotate(344deg) brightness(98%) contrast(91%);
+  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%) hue-rotate(316deg) brightness(99%) contrast(78%);
 }
 
 [data-theme="dark"] .toc-border-wrapper::after {
-  filter: brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(702%) hue-rotate(2deg) brightness(97%) contrast(87%);
+  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%) hue-rotate(338deg) brightness(93%) contrast(82%);
 }
 
 [data-theme="dark"] .theme-doc-sidebar-container {
@@ -464,7 +508,7 @@ article hr::before {
   border-radius: 50%;
   overflow: hidden;
   color: var(--ifm-background-color);
-  background-color: var(--ifm-color-primary);
+  background-color: var(--color-accent);
 }
 
 /* Limpar float da drop-cap antes dos headings */
@@ -476,4 +520,15 @@ article hr::before {
 .theme-doc-markdown h6 {
   clear: both;
   padding-top: 0.5em;
+}
+
+/* Blocos de código */
+code {
+  background-color: #352f2a;
+  color: #efdac7;
+}
+
+[data-theme="dark"] code {
+  background-color: #d9c0a0;
+  color: #22211f;
 }
