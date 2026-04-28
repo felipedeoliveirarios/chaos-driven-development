@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
         aprendidas no dia a dia do desenvolvimento
       </>
     ),
-    link: '/blog',
+    link: '/notes',
   },
   {
     title: 'Arsenal de Ferramentas',

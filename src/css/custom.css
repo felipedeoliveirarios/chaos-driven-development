@@ -458,6 +458,34 @@ article hr::after {
   filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%) hue-rotate(338deg) brightness(93%) contrast(82%);
 }
 
+/* Blog TOC - moldura ornamental (sem swizzle) */
+div[class*="tableOfContents"] {
+  position: relative;
+  min-height: 112px;
+}
+
+div[class*="tableOfContents"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 44px solid transparent;
+  border-right-width: 68px;
+  border-bottom-width: 68px;
+  border-image: url("/img/border-image-decoration-2.png") 44 68 68 44 round;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  z-index: 1;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%)
+    hue-rotate(316deg) brightness(99%) contrast(78%);
+}
+
+[data-theme="dark"] div[class*="tableOfContents"]::after {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%)
+    hue-rotate(338deg) brightness(93%) contrast(82%);
+}
+
 [data-theme="dark"] .theme-doc-sidebar-container {
   background-color: #e5ccb0;
 }
@@ -479,6 +507,58 @@ article hr::after {
 
 .table-of-contents__link:hover,
 .table-of-contents__link--active {
+  color: var(--color-accent);
+}
+
+/* Blog (Anotações) sidebar - mesma estilização da sidebar de docs */
+aside.col--3:has(nav[class*="sidebar"]) {
+  background-color: #2a2927;
+  position: relative;
+  overflow: visible;
+  align-self: flex-start;
+}
+
+[data-theme="dark"] aside.col--3:has(nav[class*="sidebar"]) {
+  background-color: #e5ccb0;
+}
+
+aside.col--3:has(nav[class*="sidebar"])::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 44px solid transparent;
+  border-right-width: 68px;
+  border-bottom-width: 68px;
+  border-image: url("/img/border-image-decoration-2.png") 44 68 68 44 round;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  z-index: 1;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%)
+    hue-rotate(316deg) brightness(99%) contrast(78%);
+  margin: -12px;
+}
+
+[data-theme="dark"] aside.col--3:has(nav[class*="sidebar"])::after {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%)
+    hue-rotate(338deg) brightness(93%) contrast(82%);
+}
+
+aside.col--3 nav[class*="sidebar"] {
+  padding: 36px 8px 24px 8px;
+  position: static;
+  max-height: none;
+}
+
+[data-theme="dark"] aside.col--3 nav[class*="sidebar"] {
+}
+
+aside.col--3 nav[class*="sidebar"] a {
+  color: var(--ifm-font-color-base);
+}
+
+aside.col--3 nav[class*="sidebar"] a:hover {
   color: var(--color-accent);
 }
 

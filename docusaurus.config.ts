@@ -48,6 +48,9 @@ const config: Config = {
           beforeDefaultRemarkPlugins: [remarkDropCap],
         },
         blog: {
+          path: 'notes',
+          routeBasePath: 'notes',
+          blogTitle: 'Anotações',
           showReadingTime: true,
           beforeDefaultRemarkPlugins: [remarkDropCap],
           feedOptions: {
@@ -80,7 +83,7 @@ const config: Config = {
           position: 'left',
           label: 'Bestiário',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/notes', label: 'Anotações', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'equipmentSidebar',
