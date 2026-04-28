@@ -1,27 +1,83 @@
+/* Container da seção */
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  margin: 1em;
 }
 
+/* Ícone SVG */
 .featureSvg {
   height: 200px;
   width: 200px;
 }
 
+/* Card (link externo + borda ornamental) */
 .featureCard {
-  display: block;
-  padding: 1.5rem;
-  border-radius: 8px;
+  display: flex;
+  position: relative;
+  height: 100%;
+  padding: 0;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.featureCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 44px solid transparent;
+  border-right-width: 68px;
+  border-bottom-width: 68px;
+  border-image: url("/img/border-image-decoration-2.png") 44 68 68 44 round;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  pointer-events: none;
+  z-index: 1;
+  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%)
+    hue-rotate(316deg) brightness(99%) contrast(78%);
+}
+
+:global([data-theme="dark"]) .featureCard::after {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%)
+    hue-rotate(338deg) brightness(93%) contrast(82%);
+}
+
+/* Conteúdo interno (área dentro da borda) */
+.featureInner {
+  position: relative;
+  z-index: 0;
+  margin: 16px;
+  padding-top: 16px;
+  transition: background-color 0.2s;
+}
+
+/* Hover: background no conteúdo + glow na borda */
 .featureCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-decoration: none;
   color: inherit;
+}
+
+.featureCard:hover .featureInner {
+  background-color: #2a2927;
+}
+
+.featureCard:hover::after {
+  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%)
+    hue-rotate(316deg) brightness(99%) contrast(78%)
+    drop-shadow(0 0 3px var(--color-accent));
+}
+
+:global([data-theme="dark"]) .featureCard:hover {
+  color: inherit;
+}
+
+:global([data-theme="dark"]) .featureCard:hover .featureInner {
+  background-color: #e5ccb0;
+}
+
+:global([data-theme="dark"]) .featureCard:hover::after {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%)
+    hue-rotate(338deg) brightness(93%) contrast(82%)
+    drop-shadow(0 0 3px var(--color-accent));
 }

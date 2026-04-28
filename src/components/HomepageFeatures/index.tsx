@@ -17,8 +17,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/icons/sword.svg').default,
     description: (
       <>
-        Problemas técnicos documentados com suas soluções. Cada "monstro" 
-        derrotado vira conhecimento compartilhado.
+        Problemas técnicos que encontrei pelo caminho, documentados com 
+        contexto, causa e solução.
       </>
     ),
     link: '/bestiary/intro',
@@ -29,7 +29,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Posts sobre experiências recentes, desafios enfrentados e lições 
-        aprendidas no dia a dia do desenvolvimento.
+        aprendidas no dia a dia do desenvolvimento
       </>
     ),
     link: '/blog',
@@ -40,7 +40,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Ferramentas úteis de desenvolvimento e organização que uso no meu 
-        fluxo de trabalho.
+        fluxo de trabalho
       </>
     ),
     link: '/equipment/intro',
@@ -51,12 +51,14 @@ function Feature({title, Svg, description, link}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <Link to={link} className={styles.featureCard}>
-        <div className="text--center circle-container">
-          <Svg className={styles.featureSvg} role="img" />
-        </div>
-        <div className="text--center padding-horiz--md">
-          <Heading as="h3">{title}</Heading>
-          <p>{description}</p>
+        <div className={styles.featureInner}>
+          <div className="text--center circle-container">
+            <Svg className={styles.featureSvg} role="img" />
+          </div>
+          <div className="text--center padding-horiz--md">
+            <Heading as="h3">{title}</Heading>
+            <p>{description}</p>
+          </div>
         </div>
       </Link>
     </div>
