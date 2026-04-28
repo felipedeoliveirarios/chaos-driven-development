@@ -24,12 +24,27 @@ const config: Config = {
     locales: ['pt-BR'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'equipment',
+        path: 'equipment',
+        routeBasePath: 'equipment',
+        sidebarPath: './sidebarsEquipment.ts',
+        beforeDefaultRemarkPlugins: [remarkDropCap],
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          path: 'bestiary',
+          routeBasePath: 'bestiary',
+          sidebarPath: './sidebarsBestiary.ts',
           beforeDefaultRemarkPlugins: [remarkDropCap],
         },
         blog: {
@@ -58,18 +73,21 @@ const config: Config = {
     },
     navbar: {
       title: 'Chaos-Driven Development',
-      logo: {
-        alt: 'CDD Logo',
-        src: 'img/logo.svg',
-      },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Bestiário',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'equipmentSidebar',
+          docsPluginId: 'equipment',
+          position: 'left',
+          label: 'Equipamento',
+        },
         {
           href: 'https://github.com/felipedeoliveirarios/chaos-driven-development',
           label: 'GitHub',

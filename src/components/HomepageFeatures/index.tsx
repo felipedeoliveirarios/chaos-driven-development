@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
         derrotado vira conhecimento compartilhado.
       </>
     ),
-    link: '/docs/intro',
+    link: '/bestiary/intro',
   },
   {
     title: 'Diário de Batalhas',
@@ -43,7 +43,7 @@ const FeatureList: FeatureItem[] = [
         fluxo de trabalho.
       </>
     ),
-    link: '/blog/tags',
+    link: '/equipment/intro',
   },
 ];
 

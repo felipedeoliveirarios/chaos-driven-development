@@ -1,24 +1,19 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+relato:
+  label: Relato
+  permalink: /relato
+  description: Experiências pessoais e histórias do dia a dia de desenvolvimento
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+tutorial:
+  label: Tutorial
+  permalink: /tutorial
+  description: Guias passo a passo sobre ferramentas, técnicas e configurações
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+opiniao:
+  label: Opinião
+  permalink: /opiniao
+  description: Reflexões e pontos de vista sobre desenvolvimento
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
-
-ferramentas:
-  label: Ferramentas
-  permalink: /ferramentas
-  description: Ferramentas úteis de desenvolvimento e organização
+til:
+  label: TIL
+  permalink: /til
+  description: Today I Learned — descobertas rápidas e curiosidades técnicas
