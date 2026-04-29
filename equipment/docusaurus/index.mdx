@@ -1,0 +1,43 @@
+---
+tags: [framework, cli]
+---
+
+# Docusaurus
+
+O [Docusaurus](https://docusaurus.io/pt-BR/) é exatamente o framework que permitiu que esse site existisse. É uma
+ferramenta de código aberto, desenvolvido pela Meta (sim, aquela Meta) que 
+permite que um desenvolvedor, com pouco código, crie uma página web simples (ou
+não), e a alimente com conteúdo em markdown, com foco em documentação de 
+projetos de sofware.
+
+## Por que Docusaurus?
+
+Honestamente, o setup foi um grande atrativo. Em questão de cinco minutos, eu 
+tinha um servidor rodando localmente, pronto pra receber meu conteúdo. 
+Obviamente, pra chegar no ponto de customização em que chegamos aqui, no CDD,
+levei alguns dias (front-end não é minha especialidade), mas, ainda assim, me
+permitiu construir um "template" e preenchê-lo com o conteúdo que quis, com
+uma facilidade e simplicidade assustadores.
+
+## Instalação
+
+Em primeiro lugar, Docusaurus requer node 20.0 ou acima (pelo menos era assim 
+em 29/04/2026, às 16:11 - momento em que esse post foi escrito). Para iniciar 
+um novo projeto, é só abrir o terminal em um diretório vazio e executar o 
+seguinte comando:
+
+```bash
+npx create-docusaurus@latest my-website classic
+```
+
+Com isso, o Docusaurus criará um projeto pronto para ser executado, 
+personalizado e preenchido com conteúdo. Esse projeto já vem com diversos 
+placeholders, e, por si só, é um tutorial de como utilizar a ferramenta. Para 
+informações mais detalhadas e outras opções, a [documentação do Docusaurus](https://docusaurus.io/pt-BR/docs) deve
+ser capaz de ajudar *(também não vou copiar a documentação inteira aqui, né?)*.
+
+## Dicas
+
+- Possui integração pronta com a [Vercel](https://vercel.com/). Basta subir o código pra um 
+repositório no github e conectar o repositório com a Vercel. Todo o CI/CD será 
+configurado automaticamente.
