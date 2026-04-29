@@ -44,6 +44,9 @@
 
   /* Sidebar */
   --ifm-menu-link-sublist-icon-filter: brightness(0) invert(1);
+
+  /* Filtro ornamental (bordas pixeladas) */
+  --ornament-filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%) hue-rotate(316deg) brightness(99%) contrast(78%);
 }
 
 [data-theme="dark"] {
@@ -74,6 +77,9 @@
 
   /* Sidebar */
   --ifm-menu-link-sublist-icon-filter: brightness(0);
+
+  /* Filtro ornamental (bordas pixeladas) */
+  --ornament-filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%) hue-rotate(338deg) brightness(93%) contrast(82%);
 }
 
 /* ========================================
@@ -210,11 +216,7 @@ button[class*="searchButton"]::before {
   image-rendering: crisp-edges;
   pointer-events: none;
   z-index: 1;
-  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%) hue-rotate(316deg) brightness(99%) contrast(78%);
-}
-
-[data-theme="dark"] .hero--primary::after {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%) hue-rotate(338deg) brightness(93%) contrast(82%);
+  filter: var(--ornament-filter);
 }
 
 .hero__title {
@@ -304,11 +306,7 @@ article::after {
   image-rendering: crisp-edges;
   pointer-events: none;
   z-index: 1;
-  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%) hue-rotate(316deg) brightness(99%) contrast(78%);
-}
-
-[data-theme="dark"] article::after {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%) hue-rotate(338deg) brightness(93%) contrast(82%);
+  filter: var(--ornament-filter);
 }
 
 .card::before {
@@ -451,20 +449,17 @@ article hr::after {
   image-rendering: crisp-edges;
   pointer-events: none;
   z-index: 1;
-  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%) hue-rotate(316deg) brightness(99%) contrast(78%);
-}
-
-[data-theme="dark"] .toc-border-wrapper::after {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%) hue-rotate(338deg) brightness(93%) contrast(82%);
+  filter: var(--ornament-filter);
 }
 
 /* Blog TOC - moldura ornamental (sem swizzle) */
-div[class*="tableOfContents"] {
+/* Exclui a TOC de docs que já tem .toc-border-wrapper via swizzle */
+div[class*="tableOfContents"]:not(.toc-border-wrapper div[class*="tableOfContents"]) {
   position: relative;
   min-height: 112px;
 }
 
-div[class*="tableOfContents"]::after {
+div[class*="tableOfContents"]:not(.toc-border-wrapper div[class*="tableOfContents"])::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -477,13 +472,7 @@ div[class*="tableOfContents"]::after {
   image-rendering: crisp-edges;
   pointer-events: none;
   z-index: 1;
-  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%)
-    hue-rotate(316deg) brightness(99%) contrast(78%);
-}
-
-[data-theme="dark"] div[class*="tableOfContents"]::after {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%)
-    hue-rotate(338deg) brightness(93%) contrast(82%);
+  filter: var(--ornament-filter);
 }
 
 [data-theme="dark"] .theme-doc-sidebar-container {
@@ -535,23 +524,14 @@ aside.col--3:has(nav[class*="sidebar"])::after {
   image-rendering: crisp-edges;
   pointer-events: none;
   z-index: 1;
-  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%)
-    hue-rotate(316deg) brightness(99%) contrast(78%);
+  filter: var(--ornament-filter);
   margin: -12px;
-}
-
-[data-theme="dark"] aside.col--3:has(nav[class*="sidebar"])::after {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%)
-    hue-rotate(338deg) brightness(93%) contrast(82%);
 }
 
 aside.col--3 nav[class*="sidebar"] {
   padding: 36px 8px 24px 8px;
   position: static;
   max-height: none;
-}
-
-[data-theme="dark"] aside.col--3 nav[class*="sidebar"] {
 }
 
 aside.col--3 nav[class*="sidebar"] a {

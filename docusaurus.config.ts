@@ -32,6 +32,8 @@ const config: Config = {
         path: 'equipment',
         routeBasePath: 'equipment',
         sidebarPath: './sidebarsEquipment.ts',
+        tags: 'tags.yml',
+        onInlineTags: 'warn',
         beforeDefaultRemarkPlugins: [remarkDropCap],
       },
     ],

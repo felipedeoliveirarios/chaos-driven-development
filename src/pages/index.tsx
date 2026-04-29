@@ -18,9 +18,7 @@ function HomepageHeader() {
         </Heading>
         <p className="subtitle">(Chaos-Driven Development)</p>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <p className={styles.heroIntro}>
-          
-        </p>
+
       </div>
     </header>
   );

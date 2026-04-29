@@ -1,9 +1,9 @@
-.highlight {
-  font-family: "Jacquard 12", system-ui !important;
-  font-size: 3.5em !important;
+.highlight.highlight {
+  font-family: "Jacquard 12", system-ui;
+  font-size: 3.5em;
   font-weight: 400;
   text-align: center;
-  color: var(--color-accent) !important;
+  color: var(--color-accent);
   margin: 2rem 0;
   clear: both;
   position: relative;
@@ -19,8 +19,7 @@
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
-  filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(834%)
-    hue-rotate(316deg) brightness(99%) contrast(78%);
+  filter: var(--ornament-filter);
 }
 
 .highlight::before {
@@ -35,10 +34,4 @@
   background-size: 192px 20px;
   height: 20px;
   margin-top: -0.25em
-}
-
-:global([data-theme="dark"]) .highlight::before,
-:global([data-theme="dark"]) .highlight::after {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(28%) saturate(3989%)
-    hue-rotate(338deg) brightness(93%) contrast(82%);
 }

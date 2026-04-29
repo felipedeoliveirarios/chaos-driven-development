@@ -1,0 +1,43 @@
+ide:
+  label: IDE
+  description: Ambientes de desenvolvimento integrado e editores de código
+
+framework:
+  label: Framework
+  description: Frameworks e bibliotecas de desenvolvimento
+
+cli:
+  label: CLI
+  description: Ferramentas de linha de comando
+
+organizacao:
+  label: Organização
+  description: Ferramentas para organização pessoal e produtividade
+
+website:
+  label: Website
+  description: Sites e serviços web úteis para desenvolvimento
+
+so:
+  label: Sistema Operacional
+  description: Sistemas operacionais e distribuições
+
+extensao:
+  label: Extensão
+  description: Extensões e plugins para outras ferramentas
+
+devops:
+  label: DevOps
+  description: Ferramentas de CI/CD, containers e infraestrutura
+
+banco-de-dados:
+  label: Banco de Dados
+  description: SGBDs e ferramentas de gerenciamento de dados
+
+design:
+  label: Design
+  description: Ferramentas de design e prototipação
+
+linguagem:
+  label: Linguagem
+  description: Linguagens de programação e seus ecossistemas
